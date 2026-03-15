@@ -15,7 +15,7 @@ const StatCard = ({ icon: Icon, label, value, color, delay }: {
     whileHover={{ y: -5 }}
   >
     <div className="flex items-center gap-3">
-      <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${color}`}>
+      <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${color}`}>
         <Icon className="h-5 w-5" />
       </div>
       <div>
@@ -95,7 +95,7 @@ const DashboardScreen = ({ threats = [] }: { threats?: ThreatItem[] }) => {
         transition={{ delay: 0.1 }}
       >
         <div className="flex items-center gap-6">
-          <div className="relative flex h-24 w-24 items-center justify-center">
+          <div className="relative flex h-24 w-24 shrink-0 items-center justify-center">
             <svg className="absolute inset-0 -rotate-90" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="42" fill="none" stroke="hsl(220 14% 18%)" strokeWidth="8" />
               <motion.circle
