@@ -95,20 +95,36 @@ const DashboardScreen = ({ threats = [] }: { threats?: ThreatItem[] }) => {
         transition={{ delay: 0.1 }}
       >
         <div className="flex items-center gap-6">
-          <div className="relative flex h-32 w-32 shrink-0 items-center justify-center">
-            <svg className="h-full w-full -rotate-90" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="45" fill="none" stroke="hsl(220 14% 18%)" strokeWidth="10" />
+          <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
+            <svg className="w-full h-full -rotate-90">
+              <circle
+                cx="50%"
+                cy="50%"
+                r="40"
+                strokeWidth="8"
+                stroke="hsl(220 14% 18%)"
+                fill="none"
+              />
               <motion.circle
-                cx="50" cy="50" r="45" fill="none"
-                stroke="hsl(142 71% 45%)" strokeWidth="10"
+                cx="50%"
+                cy="50%"
+                r="40"
+                strokeWidth="8"
+                stroke="hsl(142 71% 45%)"
+                fill="none"
                 strokeLinecap="round"
-                strokeDasharray={`${safePercentage * 2.827} ${282.7 - safePercentage * 2.827}`}
-                initial={{ strokeDasharray: "0 282.7" }}
-                animate={{ strokeDasharray: `${safePercentage * 2.827} ${282.7 - safePercentage * 2.827}` }}
+                strokeDasharray={`${safePercentage * 2.51} ${251 - safePercentage * 2.51}`}
+                strokeDashoffset="0"
+                initial={{ strokeDasharray: "0 251" }}
+                animate={{ strokeDasharray: `${safePercentage * 2.51} ${251 - safePercentage * 2.51}` }}
                 transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
               />
             </svg>
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-bold font-heading text-primary m-0 p-0 leading-none">{safePercentage}%</span>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-xl font-bold font-heading text-primary">
+                {safePercentage}%
+              </span>
+            </div>
           </div>
           <div>
             <h3 className="text-lg font-semibold font-heading">Protection Score</h3>
