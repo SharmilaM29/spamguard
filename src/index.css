@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 55%;
+
+    --accent: 142 50% 35%;
+    --accent-foreground: 210 20% 92%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 7%;
+
+    --safe: 142 71% 45%;
+    --safe-foreground: 220 20% 7%;
+
+    --danger: 0 72% 51%;
+    --danger-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 142 71% 45%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(142 71% 45% / 0.15), 0 0 60px hsl(142 71% 45% / 0.05);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px hsl(0 72% 51% / 0.2), 0 0 60px hsl(0 72% 51% / 0.08);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px hsl(38 92% 50% / 0.2), 0 0 60px hsl(38 92% 50% / 0.08);
+  }
+
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(142 71% 45%), hsl(160 60% 55%));
+  }
+
+  .text-gradient-danger {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(0 72% 51%), hsl(20 80% 55%));
+  }
+
+  .scan-line {
+    background: linear-gradient(180deg, transparent, hsl(142 71% 45% / 0.08), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
