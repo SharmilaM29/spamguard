@@ -95,8 +95,8 @@ const DashboardScreen = ({ threats = [] }: { threats?: ThreatItem[] }) => {
         transition={{ delay: 0.1 }}
       >
         <div className="flex items-center gap-6">
-          <div className="relative flex h-24 w-24 shrink-0 items-center justify-center">
-            <svg className="absolute inset-0 -rotate-90" viewBox="0 0 100 100">
+          <div className="relative flex h-32 w-32 shrink-0 items-center justify-center">
+            <svg className="h-full w-full -rotate-90" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="42" fill="none" stroke="hsl(220 14% 18%)" strokeWidth="8" />
               <motion.circle
                 cx="50" cy="50" r="42" fill="none"
@@ -108,7 +108,7 @@ const DashboardScreen = ({ threats = [] }: { threats?: ThreatItem[] }) => {
                 transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
               />
             </svg>
-            <span className="text-2xl font-bold font-heading text-primary">{safePercentage}%</span>
+            <span className="absolute inset-0 flex items-center justify-center text-3xl font-bold font-heading text-primary">{safePercentage}%</span>
           </div>
           <div>
             <h3 className="text-lg font-semibold font-heading">Protection Score</h3>
